@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --saffron: #e7a516;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-saffron: var(--saffron);
+  --font-sans: var(--font-teachers);
+  --font-logo: var(--font-dm-sans);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-teachers), Arial, Helvetica, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background: var(--foreground);
+  color: var(--background);
+}
+
+.glass-surface {
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(135deg, rgb(255 255 255 / 0.8), rgb(255 255 255 / 0.42)),
+    rgb(255 255 255 / 0.52);
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.75),
+    0 24px 80px rgb(0 0 0 / 0.08);
+  backdrop-filter: blur(18px) saturate(140%);
+}
+
+.glass-surface::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(120deg, rgb(255 255 255 / 0.62), transparent 34%);
+}
+
+.glass-dark {
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(135deg, rgb(255 255 255 / 0.14), rgb(255 255 255 / 0.04)),
+    rgb(0 0 0 / 0.34);
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.2),
+    0 24px 80px rgb(0 0 0 / 0.22);
+  backdrop-filter: blur(18px) saturate(130%);
+}
+
+.glass-dark::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(120deg, rgb(255 255 255 / 0.16), transparent 36%);
+}
