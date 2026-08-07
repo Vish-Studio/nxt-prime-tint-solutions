@@ -2,7 +2,7 @@ const steps = [
   {
     number: "01",
     title: "Shade match",
-    text: "We help choose the right tint percentage and film type for comfort, privacy, and local compliance.",
+    text: "We recommend the right film and tint level for automotive glass or architectural windows, comfort, privacy, and local compliance.",
   },
   {
     number: "02",
@@ -21,11 +21,11 @@ export function ProcessSection() {
     <section id="process" className="bg-zinc-50 px-5 py-24 text-black sm:px-8">
       <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.8fr_1.2fr]">
         <div>
-          <p className="text-sm font-bold uppercase tracking-[0.22em] text-saffron">Process</p>
-          <h2 className="mt-4 text-4xl font-black tracking-normal sm:text-5xl">
-            A darker finish without messy installs.
+          <p data-reveal className="text-sm font-bold uppercase tracking-[0.22em] text-saffron">Process</p>
+          <h2 data-reveal className="mt-4 text-4xl font-black tracking-normal sm:text-5xl">
+            A precise process for vehicles and architectural glass.
           </h2>
-          <div className="relative mt-10 aspect-[4/3] overflow-hidden bg-black">
+          <div data-reveal className="relative mt-10 aspect-[4/3] overflow-hidden rounded-lg bg-black">
             <Image
               src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=1200&auto=format&fit=crop"
               alt="Modern workspace with expansive glass and natural light"
@@ -38,7 +38,7 @@ export function ProcessSection() {
         </div>
         <div className="grid gap-4">
           {steps.map((step) => (
-            <article key={step.number} className="glass-surface grid gap-5 p-6 sm:grid-cols-[5rem_1fr]">
+            <article key={step.number} data-reveal className="glass-surface grid gap-5 p-6 sm:grid-cols-[5rem_1fr]">
               <p className="relative z-10 text-3xl font-black text-saffron">{step.number}</p>
               <div className="relative z-10">
                 <h3 className="text-2xl font-bold">{step.title}</h3>

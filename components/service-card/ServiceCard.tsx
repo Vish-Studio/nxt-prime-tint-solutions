@@ -14,7 +14,7 @@ export function ServiceCard({
   features,
 }: ServiceCardProps) {
   return (
-    <article className="glass-surface p-6 transition hover:-translate-y-1">
+    <article data-reveal className="glass-surface p-6 transition hover:-translate-y-1">
       <div className="relative z-10 flex size-12 items-center justify-center rounded-full bg-saffron text-black">
         <Icon aria-hidden="true" className="size-6" />
       </div>

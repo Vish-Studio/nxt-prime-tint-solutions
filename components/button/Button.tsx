@@ -11,9 +11,9 @@ type ButtonProps = AnchorHTMLAttributes<HTMLAnchorElement> & {
 
 const variantClasses: Record<ButtonVariant, string> = {
   primary:
-    "border border-black bg-black text-white shadow-[0_18px_60px_rgba(0,0,0,0.18)] hover:bg-zinc-800",
+    "bg-saffron text-black shadow-[0_18px_60px_rgba(0,0,0,0.14)] hover:brightness-95",
   secondary:
-    "border border-black bg-white text-black shadow-[0_14px_50px_rgba(0,0,0,0.08)] hover:bg-zinc-100",
+    "bg-white text-black shadow-[0_14px_50px_rgba(0,0,0,0.08)] hover:bg-zinc-100",
   ghost: "bg-transparent text-zinc-600 hover:text-black",
 };
 

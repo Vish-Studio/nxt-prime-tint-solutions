@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { DM_Sans, Teachers } from "next/font/google";
+import { DM_Sans, Urbanist } from "next/font/google";
+import { LenisProvider } from "@/components/lenis-provider/LenisProvider";
 import "./globals.css";
 
 const dmSans = DM_Sans({
@@ -8,22 +9,24 @@ const dmSans = DM_Sans({
   display: "swap",
 });
 
-const teachers = Teachers({
+const urbanist = Urbanist({
   subsets: ["latin"],
-  variable: "--font-teachers",
+  variable: "--font-urbanist",
   display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Nano Tint | Window and Car Tint Shades",
+  title: "Prime Tint Solutions | Automotive Tint and Architectural Window Film",
   description:
-    "Premium car tint shades and window film installation for heat control, privacy, and a cleaner blacked-out finish.",
+    "Precision automotive tint and architectural window film installation for heat control, privacy, and protected interiors.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${dmSans.variable} ${teachers.variable} h-full antialiased`}>
-      <body className="flex min-h-full flex-col">{children}</body>
+    <html lang="en" className={`${dmSans.variable} ${urbanist.variable} h-full antialiased`}>
+      <body className="flex min-h-full flex-col">
+        <LenisProvider>{children}</LenisProvider>
+      </body>
     </html>
   );
 }
