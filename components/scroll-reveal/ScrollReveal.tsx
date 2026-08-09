@@ -25,11 +25,13 @@ export function ScrollReveal({ children }: ScrollRevealProps) {
     }
 
     const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("is-revealed");
-          observer.unobserve(entry.target);
-        }
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-revealed");
+            observer.unobserve(entry.target);
+          }
+        });
       },
       { rootMargin: "0px 0px -8%", threshold: 0.08 },
     );
