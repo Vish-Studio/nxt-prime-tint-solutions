@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useSyncExternalStore } from "react";
+import { createPortal } from "react-dom";
 import { Building2, Car, Mail, Menu, Phone, X } from "lucide-react";
 import { Button } from "@/components/button/Button";
 
@@ -17,12 +18,26 @@ type MobileNavigationProps = {
 
 export function MobileNavigation({ isScrolled }: MobileNavigationProps) {
   const [isOpen, setIsOpen] = useState(false);
+  const isMounted = useSyncExternalStore(
+    () => () => {},
+    () => true,
+    () => false,
+  );
 
   useEffect(() => {
-    document.body.style.overflow = isOpen ? "hidden" : "";
+    if (!isOpen) {
+      return;
+    }
+
+    const previousBodyOverflow = document.body.style.overflow;
+    const previousDocumentOverflow = document.documentElement.style.overflow;
+
+    document.body.style.overflow = "hidden";
+    document.documentElement.style.overflow = "hidden";
 
     return () => {
-      document.body.style.overflow = "";
+      document.body.style.overflow = previousBodyOverflow;
+      document.documentElement.style.overflow = previousDocumentOverflow;
     };
   }, [isOpen]);
 
@@ -38,7 +53,8 @@ export function MobileNavigation({ isScrolled }: MobileNavigationProps) {
         <Menu aria-hidden="true" className="size-5" />
       </button>
 
-      <div className={`fixed inset-0 z-50 ${isOpen ? "pointer-events-auto" : "pointer-events-none"}`}>
+      {isMounted && createPortal(
+        <div className={`fixed inset-0 z-50 ${isOpen ? "pointer-events-auto" : "pointer-events-none"}`}>
         <button
           type="button"
           aria-label="Close navigation"
@@ -47,7 +63,7 @@ export function MobileNavigation({ isScrolled }: MobileNavigationProps) {
         />
         <aside
           aria-label="Mobile navigation"
-          className={`relative flex h-full w-[min(88vw,24rem)] flex-col overflow-y-auto bg-white px-6 py-7 text-black shadow-2xl transition-transform duration-300 ${isOpen ? "translate-x-0" : "-translate-x-full"
+          className={`fixed inset-y-0 left-0 flex h-dvh w-[min(88vw,24rem)] touch-none flex-col overflow-hidden bg-white px-6 py-7 text-black shadow-2xl transition-transform duration-300 ${isOpen ? "translate-x-0" : "-translate-x-full"
             }`}
         >
           <div className="flex items-center justify-between">
@@ -97,17 +113,17 @@ export function MobileNavigation({ isScrolled }: MobileNavigationProps) {
           </section>
 
           <div className="mt-auto pt-10">
-            <div className="flex flex-col justify-start items-start gap-3 text-sm text-left font-semibold text-zinc-700">
-              <a href="tel:+10000000000" className="flex min-h-10 items-center justify-center gap-2 transition hover:text-saffron">
+            <div className="flex flex-col items-start gap-3 text-left text-sm font-semibold text-zinc-700">
+              <a href="tel:+10000000000" className="flex min-h-10 items-center justify-start gap-2 transition hover:text-saffron">
                 <Phone aria-hidden="true" className="size-4 text-saffron" />
-                Call
+                +1 000 000 0000
               </a>
               <a
                 href="mailto:quotes@primetintsolutions.com"
-                className="flex min-h-10 items-center justify-center gap-2 transition hover:text-saffron"
+                className="flex min-h-10 items-center justify-start gap-2 transition hover:text-saffron"
               >
                 <Mail aria-hidden="true" className="size-4 text-saffron" />
-                Email
+                quotes@primetintsolutions.com
               </a>
             </div>
             <Button href="#quote" icon="phone" onClick={() => setIsOpen(false)} className="mt-5 w-full">
@@ -115,7 +131,9 @@ export function MobileNavigation({ isScrolled }: MobileNavigationProps) {
             </Button>
           </div>
         </aside>
-      </div>
+        </div>,
+        document.body,
+      )}
     </div>
   );
 }

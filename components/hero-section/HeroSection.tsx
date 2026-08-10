@@ -10,20 +10,20 @@ import { HeroServiceList } from "@/components/hero-service-list/HeroServiceList"
 const heroSlides = [
   {
     image:
-      "https://images.unsplash.com/photo-1667903597525-17701c00d7c3?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    alt: "Professional tint installation detail",
+      "https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=2340&auto=format&fit=crop",
+    alt: "Sports car with dark automotive window tint",
     label: "Automotive Tint",
   },
   {
     image:
-      "https://images.unsplash.com/photo-1685602729758-cecb632237a6?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    alt: "Premium automotive window tint finish",
+      "https://images.unsplash.com/photo-1493238792000-8113da705763?q=80&w=2340&auto=format&fit=crop",
+    alt: "Premium car with automotive window tint",
     label: "Automotive Tint",
   },
   {
     image:
-      "https://images.unsplash.com/photo-1705400904791-5c55a66f6f36?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    alt: "Modern glass surface in natural light",
+      "https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=2340&auto=format&fit=crop",
+    alt: "Office interior with expansive architectural glass",
     label: "Architectural Window Film",
   },
   {

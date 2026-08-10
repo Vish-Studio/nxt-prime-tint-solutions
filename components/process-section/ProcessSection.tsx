@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const steps = [
   {
     number: "01",
@@ -16,6 +18,19 @@ const steps = [
   },
 ];
 
+const processImages = [
+  {
+    src: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1200&auto=format&fit=crop",
+    alt: "Car ready for automotive tint installation",
+    label: "Automotive",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=1200&auto=format&fit=crop",
+    alt: "Modern workspace with expansive architectural glass",
+    label: "Architectural",
+  },
+];
+
 export function ProcessSection() {
   return (
     <section id="process" className="bg-zinc-50 px-5 py-24 text-black sm:px-8">
@@ -25,15 +40,16 @@ export function ProcessSection() {
           <h2 data-reveal className="mt-4 text-4xl font-black tracking-normal sm:text-5xl">
             A precise process for vehicles and architectural glass.
           </h2>
-          <div data-reveal className="relative mt-10 aspect-[4/3] overflow-hidden rounded-lg bg-black">
-            <Image
-              src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=1200&auto=format&fit=crop"
-              alt="Modern workspace with expansive glass and natural light"
-              fill
-              sizes="(min-width: 1024px) 40vw, 100vw"
-              className="object-cover"
-            />
-            <div className="absolute inset-0 bg-black/20" />
+          <div data-reveal className="mt-10 grid grid-cols-2 gap-4">
+            {processImages.map((image) => (
+              <figure key={image.label} className="relative aspect-[4/5] overflow-hidden rounded-lg bg-black">
+                <Image src={image.src} alt={image.alt} fill sizes="(min-width: 1024px) 20vw, 50vw" className="object-cover" />
+                <div className="absolute inset-0 bg-black/25" />
+                <figcaption className="absolute bottom-4 left-4 text-xs font-bold uppercase tracking-[0.18em] text-white">
+                  {image.label}
+                </figcaption>
+              </figure>
+            ))}
           </div>
         </div>
         <div className="grid gap-4">
@@ -51,4 +67,3 @@ export function ProcessSection() {
     </section>
   );
 }
-import Image from "next/image";

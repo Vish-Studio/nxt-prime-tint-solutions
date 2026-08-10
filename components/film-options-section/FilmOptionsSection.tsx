@@ -43,7 +43,7 @@ export function FilmOptionsSection() {
         <div className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
           {options.map(({ icon: Icon, title, text }) => (
             <article key={title} data-reveal className="glass-surface p-6">
-              <Icon aria-hidden="true" className="relative z-10 size-7 text-saffron" />
+              <Icon aria-hidden="true" className="content-icon relative z-10 size-7 text-saffron" />
               <h3 className="relative z-10 mt-5 text-xl font-bold">{title}</h3>
               <p className="relative z-10 mt-3 leading-7 text-zinc-600">{text}</p>
             </article>
