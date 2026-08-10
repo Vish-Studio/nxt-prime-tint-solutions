@@ -19,7 +19,7 @@ const applications = [
   },
 ];
 
-export function AboutSection() {
+export const AboutSection = () => {
   return (
     <section className="bg-zinc-50 px-5 py-24 text-black sm:px-8">
       <div className="mx-auto grid max-w-7xl gap-14 lg:grid-cols-[0.82fr_1.18fr] lg:items-center">
@@ -91,4 +91,4 @@ export function AboutSection() {
       </div>
     </section>
   );
-}
+};

@@ -1,6 +1,6 @@
 const services = ["Automotive tint", "Architectural window film"];
 
-export function HeroServiceList() {
+export const HeroServiceList = () => {
   return (
     <div className="mt-9">
       <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-500">Our services</p>
@@ -14,4 +14,4 @@ export function HeroServiceList() {
       </div>
     </div>
   );
-}
+};

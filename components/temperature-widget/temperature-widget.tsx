@@ -5,7 +5,7 @@ import { Sun, ThermometerSun } from "lucide-react";
 
 const comfortReadings = [76, 75, 77];
 
-export function TemperatureWidget() {
+export const TemperatureWidget = () => {
   const [readingIndex, setReadingIndex] = useState(0);
   const temperature = comfortReadings[readingIndex];
 
@@ -52,4 +52,4 @@ export function TemperatureWidget() {
       </div>
     </aside>
   );
-}
+};

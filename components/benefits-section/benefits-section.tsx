@@ -1,5 +1,5 @@
 import { Building2, Car, EyeOff, ShieldCheck, SunMedium } from "lucide-react";
-import { ServiceCard } from "@/components/service-card/ServiceCard";
+import { ServiceCard } from "@/components/service-card/service-card";
 
 const services = [
   {
@@ -28,7 +28,7 @@ const benefits = [
   { icon: EyeOff, text: "Adds privacy without making rooms or cabins feel closed in." },
 ];
 
-export function BenefitsSection() {
+export const BenefitsSection = () => {
   return (
     <section id="services" className="bg-white px-5 py-24 text-black sm:px-8">
       <div className="mx-auto max-w-7xl">
@@ -54,4 +54,4 @@ export function BenefitsSection() {
       </div>
     </section>
   );
-}
+};

@@ -17,13 +17,13 @@ const variantClasses: Record<ButtonVariant, string> = {
   ghost: "bg-transparent text-zinc-600 hover:text-black",
 };
 
-export function Button({
+export const Button = ({
   children,
   variant = "primary",
   icon = "arrow",
   className = "",
   ...props
-}: ButtonProps) {
+}: ButtonProps) => {
   const Icon = icon === "phone" ? Phone : ArrowRight;
 
   return (
@@ -35,4 +35,4 @@ export function Button({
       <Icon aria-hidden="true" className="size-4" strokeWidth={2.4} />
     </a>
   );
-}
+};

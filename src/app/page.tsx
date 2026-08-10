@@ -1,18 +1,18 @@
-import { AboutSection } from "@/components/about-section/AboutSection";
-import { BenefitsSection } from "@/components/benefits-section/BenefitsSection";
-import { FilmOptionsSection } from "@/components/film-options-section/FilmOptionsSection";
-import { FinalCtaSection } from "@/components/final-cta-section/FinalCtaSection";
-import { GallerySection } from "@/components/gallery-section/GallerySection";
-import { HeroSection } from "@/components/hero-section/HeroSection";
-import { ProcessSection } from "@/components/process-section/ProcessSection";
-import { SiteFooter } from "@/components/site-footer/SiteFooter";
-import { SiteHeader } from "@/components/site-header/SiteHeader";
-import { SolutionDetailSection } from "@/components/solution-detail-section/SolutionDetailSection";
-import { StudioCreditSection } from "@/components/studio-credit-section/StudioCreditSection";
-import { ScrollReveal } from "@/components/scroll-reveal/ScrollReveal";
-import { TestimonialSection } from "@/components/testimonial-section/TestimonialSection";
+import { AboutSection } from "@/components/about-section/about-section";
+import { BenefitsSection } from "@/components/benefits-section/benefits-section";
+import { FilmOptionsSection } from "@/components/film-options-section/film-options-section";
+import { FinalCtaSection } from "@/components/final-cta-section/final-cta-section";
+import { GallerySection } from "@/components/gallery-section/gallery-section";
+import { HeroSection } from "@/components/hero-section/hero-section";
+import { ProcessSection } from "@/components/process-section/process-section";
+import { ScrollReveal } from "@/components/scroll-reveal/scroll-reveal";
+import { SiteFooter } from "@/components/site-footer/site-footer";
+import { SiteHeader } from "@/components/site-header/site-header";
+import { SolutionDetailSection } from "@/components/solution-detail-section/solution-detail-section";
+import { StudioCreditSection } from "@/components/studio-credit-section/studio-credit-section";
+import { TestimonialSection } from "@/components/testimonial-section/testimonial-section";
 
-export default function Home() {
+const Home = () => {
   return (
     <>
       <SiteHeader />
@@ -54,4 +54,6 @@ export default function Home() {
       </ScrollReveal>
     </>
   );
-}
+};
+
+export default Home;

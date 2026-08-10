@@ -7,7 +7,7 @@ type ScrollRevealProps = {
   children: ReactNode;
 };
 
-export function ScrollReveal({ children }: ScrollRevealProps) {
+export const ScrollReveal = ({ children }: ScrollRevealProps) => {
   const elementRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -45,4 +45,4 @@ export function ScrollReveal({ children }: ScrollRevealProps) {
   }, []);
 
   return <div ref={elementRef} className="contents">{children}</div>;
-}
+};

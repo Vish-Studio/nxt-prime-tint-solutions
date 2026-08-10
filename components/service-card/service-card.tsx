@@ -10,14 +10,14 @@ type ServiceCardProps = {
   features: string[];
 };
 
-export function ServiceCard({
+export const ServiceCard = ({
   image,
   imageAlt,
   icon: Icon,
   title,
   description,
   features,
-}: ServiceCardProps) {
+}: ServiceCardProps) => {
   return (
     <article data-reveal className="glass-surface p-6">
       <div className="relative z-10 aspect-[16/8] overflow-hidden rounded-lg bg-black">
@@ -39,4 +39,4 @@ export function ServiceCard({
       </ul>
     </article>
   );
-}
+};

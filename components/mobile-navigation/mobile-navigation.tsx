@@ -3,9 +3,14 @@
 import { useEffect, useState, useSyncExternalStore } from "react";
 import { createPortal } from "react-dom";
 import { Building2, Car, Mail, Menu, Phone, X } from "lucide-react";
-import { Button } from "@/components/button/Button";
+import { Button } from "@/components/button/button";
 
-const navItems = ["Services", "Benefits", "Process", "Quote"];
+const navItems = [
+  { label: "Services", id: "services" },
+  { label: "Solutions", id: "solutions" },
+  { label: "Gallery", id: "gallery" },
+  { label: "Process", id: "process" },
+];
 
 const solutionItems = [
   { icon: Car, label: "Automotive tint" },
@@ -16,7 +21,7 @@ type MobileNavigationProps = {
   isScrolled: boolean;
 };
 
-export function MobileNavigation({ isScrolled }: MobileNavigationProps) {
+export const MobileNavigation = ({ isScrolled }: MobileNavigationProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const isMounted = useSyncExternalStore(
     () => () => {},
@@ -79,14 +84,14 @@ export function MobileNavigation({ isScrolled }: MobileNavigationProps) {
           </div>
 
           <nav aria-label="Mobile menu" className="mt-10 grid gap-7">
-            {navItems.map((item) => (
+            {navItems.map(({ label, id }) => (
               <a
-                key={item}
-                href={`#${item.toLowerCase()}`}
+                key={id}
+                href={`#${id}`}
                 onClick={() => setIsOpen(false)}
                 className="text-3xl font-bold leading-none text-zinc-800 transition hover:text-saffron"
               >
-                {item}
+                {label}
               </a>
             ))}
           </nav>
@@ -136,4 +141,4 @@ export function MobileNavigation({ isScrolled }: MobileNavigationProps) {
       )}
     </div>
   );
-}
+};

@@ -17,7 +17,7 @@ type StudioCreditSectionProps = {
   variant: keyof typeof messages;
 };
 
-export function StudioCreditSection({ variant }: StudioCreditSectionProps) {
+export const StudioCreditSection = ({ variant }: StudioCreditSectionProps) => {
   const message = messages[variant];
 
   return (
@@ -45,4 +45,4 @@ export function StudioCreditSection({ variant }: StudioCreditSectionProps) {
       </div>
     </section>
   );
-}
+};

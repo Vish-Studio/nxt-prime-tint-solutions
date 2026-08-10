@@ -1,6 +1,6 @@
-import { Button } from "@/components/button/Button";
+import { Button } from "@/components/button/button";
 
-export function FinalCtaSection() {
+export const FinalCtaSection = () => {
   return (
     <section id="quote" className="bg-white px-5 py-24 text-black sm:px-8">
       <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[1fr_auto] lg:items-end">
@@ -25,4 +25,4 @@ export function FinalCtaSection() {
       </div>
     </section>
   );
-}
+};

@@ -41,7 +41,7 @@ const testimonials = [
   },
 ];
 
-export function TestimonialSection() {
+export const TestimonialSection = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const activeTestimonial = testimonials[activeIndex];
@@ -148,4 +148,4 @@ export function TestimonialSection() {
       </div>
     </section>
   );
-}
+};

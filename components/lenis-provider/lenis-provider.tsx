@@ -8,10 +8,10 @@ type LenisProviderProps = {
   children: ReactNode;
 };
 
-export function LenisProvider({ children }: LenisProviderProps) {
+export const LenisProvider = ({ children }: LenisProviderProps) => {
   return (
     <ReactLenis root options={{ lerp: 0.09, smoothWheel: true, anchors: true }}>
       {children}
     </ReactLenis>
   );
-}
+};

@@ -1,5 +1,5 @@
 import { ArrowUpRight, Mail, MapPin, Phone, ShieldCheck } from "lucide-react";
-import { Button } from "@/components/button/Button";
+import { Button } from "@/components/button/button";
 
 const solutions = [
   {
@@ -20,7 +20,7 @@ const footerLinks = [
   { label: "Request an estimate", href: "#quote" },
 ];
 
-export function SiteFooter() {
+export const SiteFooter = () => {
   const year = new Date().getFullYear();
 
   return (
@@ -160,4 +160,4 @@ export function SiteFooter() {
       </div>
     </footer>
   );
-}
+};

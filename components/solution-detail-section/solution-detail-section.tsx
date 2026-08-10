@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Building2, Car, EyeOff, ShieldCheck, SunMedium } from "lucide-react";
-import { Button } from "@/components/button/Button";
+import { Button } from "@/components/button/button";
 
 const solutions = [
   {
@@ -33,7 +33,7 @@ const solutions = [
   },
 ];
 
-export function SolutionDetailSection() {
+export const SolutionDetailSection = () => {
   return (
     <section id="solutions" className="bg-black px-5 py-24 text-white sm:px-8">
       <div className="mx-auto max-w-7xl">
@@ -85,4 +85,4 @@ export function SolutionDetailSection() {
       </div>
     </section>
   );
-}
+};

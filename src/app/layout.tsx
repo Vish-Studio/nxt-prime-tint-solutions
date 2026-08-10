@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { DM_Sans, Urbanist } from "next/font/google";
-import { LenisProvider } from "@/components/lenis-provider/LenisProvider";
+import { LenisProvider } from "@/components/lenis-provider/lenis-provider";
 import "./globals.css";
 
 const dmSans = DM_Sans({
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     "Precision automotive tint and architectural window film installation for heat control, privacy, and protected interiors.",
 };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+const RootLayout = ({ children }: LayoutProps<"/">) => {
   return (
     <html lang="en" className={`${dmSans.variable} ${urbanist.variable} h-full antialiased`}>
       <body className="flex min-h-full flex-col">
@@ -29,4 +29,6 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       </body>
     </html>
   );
-}
+};
+
+export default RootLayout;

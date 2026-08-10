@@ -1,17 +1,30 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Button } from "@/components/button/Button";
-import { MobileNavigation } from "@/components/mobile-navigation/MobileNavigation";
+import { Button } from "@/components/button/button";
+import { MobileNavigation } from "@/components/mobile-navigation/mobile-navigation";
 
-const navItems = ["Services", "Benefits", "Process", "Quote"];
+const navItems = [
+  { label: "Services", id: "services" },
+  { label: "Solutions", id: "solutions" },
+  { label: "Gallery", id: "gallery" },
+  { label: "Process", id: "process" },
+];
 
-export function SiteHeader() {
+export const SiteHeader = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeItem, setActiveItem] = useState("");
 
   useEffect(() => {
-    const updateScrollState = () => setIsScrolled(window.scrollY > 12);
+    const updateScrollState = () => {
+      const hasLeftHero = window.scrollY > 12;
+
+      setIsScrolled(hasLeftHero);
+
+      if (!hasLeftHero) {
+        setActiveItem("");
+      }
+    };
 
     updateScrollState();
     window.addEventListener("scroll", updateScrollState, { passive: true });
@@ -21,7 +34,7 @@ export function SiteHeader() {
 
   useEffect(() => {
     const sectionElements = navItems
-      .map((item) => document.getElementById(item.toLowerCase()))
+      .map(({ id }) => document.getElementById(id))
       .filter((section): section is HTMLElement => section !== null);
 
     const observer = new IntersectionObserver(
@@ -59,18 +72,18 @@ export function SiteHeader() {
           </a>
         </div>
         <nav aria-label="Main navigation" className="hidden items-center gap-8 md:flex">
-          {navItems.map((item) => (
+          {navItems.map(({ label, id }) => (
             <a
-              key={item}
-              href={`#${item.toLowerCase()}`}
-              className={`text-sm font-medium transition ${activeItem === item.toLowerCase()
+              key={id}
+              href={`#${id}`}
+              className={`text-sm font-medium transition ${isScrolled && activeItem === id
                 ? "font-bold text-white"
                 : isScrolled
                   ? "text-white/70 hover:text-white"
                   : "text-zinc-600 hover:text-black"
                 }`}
             >
-              {item}
+              {label}
             </a>
           ))}
         </nav>
@@ -80,4 +93,4 @@ export function SiteHeader() {
       </div>
     </header>
   );
-}
+};

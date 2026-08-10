@@ -2,10 +2,10 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { Button } from "@/components/button/Button";
-import { TemperatureWidget } from "@/components/temperature-widget/TemperatureWidget";
-import { TintShadeSelector } from "@/components/tint-shade-selector/TintShadeSelector";
-import { HeroServiceList } from "@/components/hero-service-list/HeroServiceList";
+import { Button } from "@/components/button/button";
+import { HeroServiceList } from "@/components/hero-service-list/hero-service-list";
+import { TemperatureWidget } from "@/components/temperature-widget/temperature-widget";
+import { TintShadeSelector } from "@/components/tint-shade-selector/tint-shade-selector";
 
 const heroSlides = [
   {
@@ -47,7 +47,7 @@ const tintSpectrum = [
 
 const panelTransitionMs = 120;
 
-export function HeroSection() {
+export const HeroSection = () => {
   const [activeSlide, setActiveSlide] = useState(0);
   const [isBlackout, setIsBlackout] = useState(true);
   const [isHeroContentVisible, setIsHeroContentVisible] = useState(false);
@@ -182,4 +182,4 @@ export function HeroSection() {
       </div>
     </section>
   );
-}
+};

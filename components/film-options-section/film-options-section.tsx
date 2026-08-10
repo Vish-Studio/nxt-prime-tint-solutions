@@ -23,7 +23,7 @@ const options = [
   },
 ];
 
-export function FilmOptionsSection() {
+export const FilmOptionsSection = () => {
   return (
     <section className="bg-white px-5 py-24 text-black sm:px-8">
       <div className="mx-auto max-w-7xl">
@@ -52,4 +52,4 @@ export function FilmOptionsSection() {
       </div>
     </section>
   );
-}
+};
