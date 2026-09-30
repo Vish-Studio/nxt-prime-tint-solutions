@@ -35,7 +35,7 @@ const solutions = [
 
 export const SolutionDetailSection = () => {
   return (
-    <section id="solutions" className="bg-black px-5 py-24 text-white sm:px-8">
+    <section data-section="solutions" id="solutions" className="bg-black px-5 py-24 text-white sm:px-8">
       <div className="mx-auto max-w-7xl">
         <div data-reveal className="max-w-3xl">
           <p className="text-sm font-bold uppercase tracking-[0.22em] text-saffron">Two ways to tint better</p>
@@ -80,7 +80,7 @@ export const SolutionDetailSection = () => {
         </div>
 
         <div data-reveal className="mt-16">
-          <Button href="#quote">Get a Solution Quote</Button>
+          <Button href="#quote" data-track="quote_cta_click" data-track-location="solutions">Get a Solution Quote</Button>
         </div>
       </div>
     </section>

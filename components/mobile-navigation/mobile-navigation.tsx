@@ -88,6 +88,8 @@ export const MobileNavigation = ({ isScrolled }: MobileNavigationProps) => {
               <a
                 key={id}
                 href={`#${id}`}
+                data-track="nav_click"
+                data-track-section={id}
                 onClick={() => setIsOpen(false)}
                 className="text-3xl font-bold leading-none text-zinc-800 transition hover:text-saffron"
               >
@@ -105,6 +107,8 @@ export const MobileNavigation = ({ isScrolled }: MobileNavigationProps) => {
                 <a
                   key={label}
                   href="#services"
+                  data-track="solution_card_click"
+                  data-track-solution={label}
                   onClick={() => setIsOpen(false)}
                   className="group rounded-lg bg-zinc-50 p-4 transition hover:bg-zinc-100"
                 >
@@ -119,19 +123,21 @@ export const MobileNavigation = ({ isScrolled }: MobileNavigationProps) => {
 
           <div className="mt-auto pt-10">
             <div className="flex flex-col items-start gap-3 text-left text-sm font-semibold text-zinc-700">
-              <a href="tel:+10000000000" className="flex min-h-10 items-center justify-start gap-2 transition hover:text-saffron">
+              <a href="tel:+10000000000" data-track="phone_click" data-track-location="mobile-menu" className="flex min-h-10 items-center justify-start gap-2 transition hover:text-saffron">
                 <Phone aria-hidden="true" className="size-4 text-saffron" />
                 +1 000 000 0000
               </a>
               <a
                 href="mailto:quotes@primetintsolutions.com"
+                data-track="email_click"
+                data-track-location="mobile-menu"
                 className="flex min-h-10 items-center justify-start gap-2 transition hover:text-saffron"
               >
                 <Mail aria-hidden="true" className="size-4 text-saffron" />
                 quotes@primetintsolutions.com
               </a>
             </div>
-            <Button href="#quote" icon="phone" onClick={() => setIsOpen(false)} className="mt-5 w-full">
+            <Button href="#quote" icon="phone" data-track="quote_cta_click" data-track-location="mobile-menu" onClick={() => setIsOpen(false)} className="mt-5 w-full">
               Get a Free Quote
             </Button>
           </div>

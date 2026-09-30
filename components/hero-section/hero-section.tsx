@@ -91,7 +91,7 @@ export const HeroSection = () => {
     }`;
 
   return (
-    <section className="bg-white text-black">
+    <section data-section="hero" className="bg-white text-black">
       <div className="mx-auto grid min-h-[920px] w-full max-w-7xl gap-10 px-5 pb-16 pt-32 sm:px-8 lg:min-h-screen lg:grid-cols-[0.78fr_1.22fr] lg:items-end lg:gap-16 lg:py-28">
         <div className="max-w-xl">
           <p
@@ -114,10 +114,10 @@ export const HeroSection = () => {
             that still feel open.
           </p>
           <div className={`${revealClass()} mt-8 flex flex-col gap-3 sm:flex-row`} style={{ transitionDelay: "300ms" }}>
-            <Button href="#quote" icon="phone">
+            <Button href="#quote" icon="phone" data-track="quote_cta_click" data-track-location="hero">
               Get a Free Quote
             </Button>
-            <Button href="#services" variant="secondary">
+            <Button href="#services" variant="secondary" data-track="service_explore_click">
               Explore Services
             </Button>
           </div>

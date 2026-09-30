@@ -33,7 +33,7 @@ const processImages = [
 
 export const ProcessSection = () => {
   return (
-    <section id="process" className="bg-zinc-50 px-5 py-24 text-black sm:px-8">
+    <section data-section="process" id="process" className="bg-zinc-50 px-5 py-24 text-black sm:px-8">
       <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.8fr_1.2fr]">
         <div>
           <p data-reveal className="text-sm font-bold uppercase tracking-[0.22em] text-saffron">Process</p>

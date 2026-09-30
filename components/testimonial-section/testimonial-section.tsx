@@ -67,7 +67,7 @@ export const TestimonialSection = () => {
   };
 
   return (
-    <section className="bg-white px-5 py-24 text-black sm:px-8">
+    <section data-section="testimonials" className="bg-white px-5 py-24 text-black sm:px-8">
       <div className="mx-auto max-w-7xl">
         <div data-reveal className="grid gap-6 lg:grid-cols-[0.75fr_1.25fr] lg:items-end">
           <div>
@@ -118,6 +118,8 @@ export const TestimonialSection = () => {
                   type="button"
                   aria-label={`Show testimonial ${index + 1}`}
                   aria-current={index === activeIndex ? "true" : undefined}
+                  data-track="testimonial_navigate"
+                  data-track-direction="dot"
                   onClick={() => setActiveIndex(index)}
                   className={`h-2.5 w-2.5 rounded-full transition ${
                     index === activeIndex ? "bg-saffron" : "bg-zinc-300 hover:bg-zinc-500"
@@ -129,6 +131,8 @@ export const TestimonialSection = () => {
               <button
                 type="button"
                 aria-label="Show previous testimonial"
+                data-track="testimonial_navigate"
+                data-track-direction="previous"
                 onClick={showPrevious}
                 className="flex size-11 items-center justify-center rounded-full bg-black text-white transition hover:bg-zinc-700"
               >
@@ -137,6 +141,8 @@ export const TestimonialSection = () => {
               <button
                 type="button"
                 aria-label="Show next testimonial"
+                data-track="testimonial_navigate"
+                data-track-direction="next"
                 onClick={showNext}
                 className="flex size-11 items-center justify-center rounded-full bg-saffron text-black transition hover:brightness-95"
               >

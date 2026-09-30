@@ -30,7 +30,7 @@ const benefits = [
 
 export const BenefitsSection = () => {
   return (
-    <section id="services" className="bg-white px-5 py-24 text-black sm:px-8">
+    <section data-section="services" id="services" className="bg-white px-5 py-24 text-black sm:px-8">
       <div className="mx-auto max-w-7xl">
         <div data-reveal className="max-w-2xl">
           <p className="text-sm font-bold uppercase tracking-[0.22em] text-saffron">Core solutions</p>
