@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { DM_Sans, Urbanist } from "next/font/google";
+import { CookieConsentBanner } from "@/components/cookie-consent-banner/cookie-consent-banner";
 import { LenisProvider } from "@/components/lenis-provider/lenis-provider";
 import "./globals.css";
 
@@ -26,6 +27,7 @@ const RootLayout = ({ children }: LayoutProps<"/">) => {
     <html lang="en" className={`${dmSans.variable} ${urbanist.variable} h-full antialiased`}>
       <body className="flex min-h-full flex-col">
         <LenisProvider>{children}</LenisProvider>
+        <CookieConsentBanner />
       </body>
     </html>
   );
