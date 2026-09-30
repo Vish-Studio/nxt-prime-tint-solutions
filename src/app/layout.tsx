@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { DM_Sans, Urbanist } from "next/font/google";
+import { AnalyticsEvents } from "@/components/analytics-events/analytics-events";
 import { CookieConsentBanner } from "@/components/cookie-consent-banner/cookie-consent-banner";
 import { GoogleAnalytics } from "@/components/google-analytics/google-analytics";
 import { LenisProvider } from "@/components/lenis-provider/lenis-provider";
@@ -30,6 +31,7 @@ const RootLayout = ({ children }: LayoutProps<"/">) => {
         <LenisProvider>{children}</LenisProvider>
         <CookieConsentBanner />
         <GoogleAnalytics />
+        <AnalyticsEvents />
       </body>
     </html>
   );
