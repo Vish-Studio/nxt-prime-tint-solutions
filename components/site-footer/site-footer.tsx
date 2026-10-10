@@ -24,7 +24,7 @@ export const SiteFooter = () => {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-black px-5 text-white sm:px-8">
+    <footer data-section="footer" className="bg-black px-5 text-white sm:px-8">
       <div className="mx-auto max-w-7xl py-20 sm:py-24">
         <div className="grid gap-12 lg:grid-cols-[1.25fr_0.75fr] lg:items-end">
           <div data-reveal>
@@ -40,10 +40,10 @@ export const SiteFooter = () => {
             </p>
           </div>
           <div data-reveal className="flex flex-col gap-4 sm:flex-row lg:flex-col lg:justify-self-end">
-            <Button href="#quote" icon="phone">
+            <Button href="#quote" icon="phone" data-track="quote_cta_click" data-track-location="footer">
               Get Free Estimate
             </Button>
-            <Button href="mailto:quotes@primetintsolutions.com" variant="secondary">
+            <Button href="mailto:quotes@primetintsolutions.com" variant="secondary" data-track="email_click" data-track-location="footer">
               Send Project Details
             </Button>
           </div>
@@ -51,7 +51,7 @@ export const SiteFooter = () => {
 
         <div className="mt-20 grid gap-6 md:grid-cols-2">
           {solutions.map((solution) => (
-            <a key={solution.title} href={solution.href} data-reveal className="glass-dark group block min-h-64 p-8 sm:p-10">
+            <a key={solution.title} href={solution.href} data-track="solution_card_click" data-track-solution={solution.title} data-reveal className="glass-dark group block min-h-64 p-8 sm:p-10">
               <div className="relative z-10 flex items-start justify-between gap-6">
                 <div>
                   <p className="text-sm font-bold uppercase tracking-[0.2em] text-saffron">Solution</p>
@@ -80,6 +80,8 @@ export const SiteFooter = () => {
             <div className="mt-8 flex flex-wrap gap-x-5 gap-y-3 text-sm font-semibold text-zinc-300">
               <a
                 href="https://www.instagram.com/"
+                data-track="social_click"
+                data-track-network="instagram"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="transition hover:text-saffron"
@@ -88,6 +90,8 @@ export const SiteFooter = () => {
               </a>
               <a
                 href="https://www.facebook.com/"
+                data-track="social_click"
+                data-track-network="facebook"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="transition hover:text-saffron"
@@ -96,6 +100,8 @@ export const SiteFooter = () => {
               </a>
               <a
                 href="https://www.tiktok.com/"
+                data-track="social_click"
+                data-track-network="tiktok"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="transition hover:text-saffron"
@@ -112,6 +118,8 @@ export const SiteFooter = () => {
                 <a
                   key={link.label}
                   href={link.href}
+                  data-track="nav_click"
+                  data-track-section={link.href.slice(1)}
                   className="group flex items-center gap-2 font-medium text-zinc-300 transition hover:text-white"
                 >
                   {link.label}
@@ -127,15 +135,15 @@ export const SiteFooter = () => {
           <div data-reveal>
             <p className="text-sm font-bold uppercase tracking-[0.22em] text-zinc-500">Contact</p>
             <div className="mt-6 grid gap-5">
-              <a href="tel:+10000000000" className="flex items-center gap-3 font-semibold text-white transition hover:text-saffron">
+              <a href="tel:+10000000000" data-track="phone_click" data-track-location="footer" className="flex items-center gap-3 font-semibold text-white transition hover:text-saffron">
                 <Phone aria-hidden="true" className="size-5 text-saffron" />
                 +1 000 000 0000
               </a>
-              <a href="mailto:quotes@primetintsolutions.com" className="flex items-center gap-3 font-semibold text-white transition hover:text-saffron">
+              <a href="mailto:quotes@primetintsolutions.com" data-track="email_click" data-track-location="footer" className="flex items-center gap-3 font-semibold text-white transition hover:text-saffron">
                 <Mail aria-hidden="true" className="size-5 text-saffron" />
                 quotes@primetintsolutions.com
               </a>
-              <a href="#quote" className="flex items-start gap-3 leading-6 text-zinc-300 transition hover:text-white">
+              <a href="#quote" data-track="quote_cta_click" data-track-location="footer-address" className="flex items-start gap-3 leading-6 text-zinc-300 transition hover:text-white">
                 <MapPin aria-hidden="true" className="mt-0.5 size-5 shrink-0 text-saffron" />
                 Mobile and in-shop tinting
               </a>
@@ -149,6 +157,8 @@ export const SiteFooter = () => {
             Website designed by:{" "}
             <a
               href="https://www.vish.studio"
+              data-track="studio_credit_click"
+              data-track-location="footer"
               target="_blank"
               rel="noopener noreferrer"
               className="font-semibold text-white underline decoration-zinc-600 underline-offset-4 transition hover:decoration-white"

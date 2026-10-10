@@ -21,7 +21,7 @@ export const StudioCreditSection = ({ variant }: StudioCreditSectionProps) => {
   const message = messages[variant];
 
   return (
-    <section className="bg-saffron px-5 py-16 text-black sm:px-8">
+    <section data-section={`studio-credit-${variant}`} className="bg-saffron px-5 py-16 text-black sm:px-8">
       <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
         <div data-reveal>
           <div className="flex items-center gap-3">
@@ -34,6 +34,8 @@ export const StudioCreditSection = ({ variant }: StudioCreditSectionProps) => {
           <p className="max-w-2xl text-lg leading-8 text-black/70">{message.text}</p>
           <a
             href="https://www.vish.studio"
+            data-track="studio_credit_click"
+            data-track-location={variant}
             target="_blank"
             rel="noopener noreferrer"
             className="mt-6 inline-flex items-center gap-2 text-sm font-bold transition hover:opacity-70"
