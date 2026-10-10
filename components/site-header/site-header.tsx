@@ -76,6 +76,8 @@ export const SiteHeader = () => {
             <a
               key={id}
               href={`#${id}`}
+              data-track="nav_click"
+              data-track-section={id}
               className={`text-sm font-medium transition ${isScrolled && activeItem === id
                 ? "font-bold text-white"
                 : isScrolled
@@ -87,7 +89,7 @@ export const SiteHeader = () => {
             </a>
           ))}
         </nav>
-        <Button href="#quote" variant="primary" icon="phone" className="hidden md:inline-flex">
+        <Button href="#quote" variant="primary" icon="phone" data-track="quote_cta_click" data-track-location="header" className="hidden md:inline-flex">
           Free Estimate
         </Button>
       </div>

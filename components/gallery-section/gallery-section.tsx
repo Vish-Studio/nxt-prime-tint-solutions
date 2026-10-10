@@ -33,7 +33,7 @@ const work = [
 
 export const GallerySection = () => {
   return (
-    <section id="gallery" className="bg-white px-5 py-24 text-black sm:px-8">
+    <section data-section="gallery" id="gallery" className="bg-white px-5 py-24 text-black sm:px-8">
       <div className="mx-auto max-w-7xl">
         <div data-reveal className="grid gap-6 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
           <div>

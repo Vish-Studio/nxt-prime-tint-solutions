@@ -25,7 +25,7 @@ const options = [
 
 export const FilmOptionsSection = () => {
   return (
-    <section className="bg-white px-5 py-24 text-black sm:px-8">
+    <section data-section="film-options" className="bg-white px-5 py-24 text-black sm:px-8">
       <div className="mx-auto max-w-7xl">
         <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
           <div data-reveal>
